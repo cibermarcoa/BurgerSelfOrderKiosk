@@ -4,12 +4,14 @@
  */
 package sreens;
 
+import manager.Context;
+
 /**
  *
  * @author cibermarcoa
  */
 public interface KioskScreen {
-    
+    KioskScreen show(Context c);
 }
 
 /*

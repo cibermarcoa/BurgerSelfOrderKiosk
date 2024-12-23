@@ -4,13 +4,16 @@
  */
 package sreens;
 
+import manager.Context;
+
 /**
  *
  * @author nemo
  */
-public class CarouselScreen {
-    /*
-    #adjustCarruselButtons(currentElement: int, numberOfElements: int)
-#configureScreenButtons()
-    */
+public abstract class CarouselScreen implements KioskScreen {
+        @Override
+    public abstract KioskScreen show(Context c);
+    
+    protected abstract void adjustCarruselButtons(int currentElement, int numberOfElements);
+    protected abstract void configureScreenButtons();
 }

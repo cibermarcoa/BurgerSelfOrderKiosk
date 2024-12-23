@@ -10,7 +10,7 @@ import manager.Context;
  *
  * @author nemo
  */
-public class IdiomScreen extends CarouselScreen {
+public class SectionScreen extends CarouselScreen {
 
     @Override
     public KioskScreen show(Context c) {
@@ -26,6 +26,7 @@ public class IdiomScreen extends CarouselScreen {
     protected void configureScreenButtons() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-    
+    /*
+    +show(Context)
+    */
 }

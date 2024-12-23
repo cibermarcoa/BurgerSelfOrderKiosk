@@ -1,0 +1,3 @@
+configureScreenButtons() como modifica screen si no le pasamos ningun argumento?
+
+menu card está en el paquete de manager o screens?
