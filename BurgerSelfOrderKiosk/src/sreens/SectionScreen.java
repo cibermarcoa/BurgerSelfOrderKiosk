@@ -5,28 +5,37 @@
 package sreens;
 
 import manager.Context;
+import manager.SimpleKiosk;
 
 /**
  *
  * @author nemo
  */
-public class SectionScreen extends CarouselScreen {
+public class SectionScreen implements KioskScreen {
 
-    @Override
     public KioskScreen show(Context c) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        SimpleKiosk k = c.getKiosk();
+        k.clearScreen();
+        this.configureScreenButtons(k);
+        char res = k.waitEvent(60);
+        System.out.println(res);
+        return switch (res) {
+            case 'A' -> new ProductScreen(0);
+            case 'B' -> new ProductScreen(1);
+            case 'C' -> new ProductScreen(2);
+            default -> null;
+        };
+        
     }
 
-    @Override
     protected void adjustCarruselButtons(int currentElement, int numberOfElements) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    protected void configureScreenButtons() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private void configureScreenButtons(SimpleKiosk kiosk) {
+        kiosk.setMode();
+        kiosk.setOption(0, "Hamburgesa");
+        kiosk.setOption(1, "Bebida");
+        kiosk.setOption(2, "Complemento");
     }
-    /*
-    +show(Context)
-    */
 }

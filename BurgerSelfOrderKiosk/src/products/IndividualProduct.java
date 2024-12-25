@@ -8,6 +8,35 @@ package products;
  *
  * @author nemo
  */
-public class IndividualProduct {
-    
+public class IndividualProduct implements Product{
+    private String name;
+    private String description;
+    private String imageFileName;
+    private int price;
+
+    // Constructor
+    public IndividualProduct(String name, String description, String imageFileName, int price) {
+        this.name = name;
+        this.description = description;
+        this.imageFileName = imageFileName;
+        this.price = price;
+    }
+
+    @Override
+    public int getPrice() {
+        return this.price;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public String getImageFileName() {
+        return this.imageFileName;
+    }
 }

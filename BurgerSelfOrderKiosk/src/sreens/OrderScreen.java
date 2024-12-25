@@ -5,7 +5,7 @@
 package sreens;
 
 import manager.Context;
-import manager.Order;
+import products.Order;
 import manager.SimpleKiosk;
 
 /**
@@ -20,10 +20,14 @@ public class OrderScreen implements KioskScreen {
         SimpleKiosk k = c.getKiosk();
         k.clearScreen();
         this.configureScreenButtons(k);
+        k.setDescription(c.getOrder().getOrderText());
         char res = k.waitEvent(60);
         System.out.println(res);
         
-        return new SectionScreen();
+        if (res == 'B')
+            return new SectionScreen();
+        else
+            return null;
     }
     
     private void configureScreenButtons(SimpleKiosk kiosk) {
@@ -33,6 +37,5 @@ public class OrderScreen implements KioskScreen {
             kiosk.setOption(2, "Elimiar producto");
             kiosk.setOption(4, "Terminar pedido");
             kiosk.setOption(5, "Cancelar Pedido");
-            kiosk.setDescription("PEDIDO 20 :");
     }
 }

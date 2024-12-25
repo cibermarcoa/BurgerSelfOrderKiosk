@@ -1,3 +1,18 @@
 configureScreenButtons() como modifica screen si no le pasamos ningun argumento?
 
-menu card está en el paquete de manager o screens?
+menu card está en el paquete de manager o screens o products?
+
+carousel screen es interfaz o abstracta, las hijas heredan o implementan?
+
+hay algunas que tienen constructor y otras no ¿que hacemos?
+
+hay dos clases context en el uml ¿cual implementamos?
+
+
+menu solo tiene un atributo pero varios metodos?
+Menu
+-discount: int
++getPrice(): int
++getProduct(int): IndividualProduct
++getNumProducts(): int
++getName(): String

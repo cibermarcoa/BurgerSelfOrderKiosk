@@ -11,9 +11,11 @@ import manager.Context;
  * @author nemo
  */
 public abstract class CarouselScreen implements KioskScreen {
-        @Override
-    public abstract KioskScreen show(Context c);
     
-    protected abstract void adjustCarruselButtons(int currentElement, int numberOfElements);
-    protected abstract void configureScreenButtons();
+    protected void adjustCarruselButtons(int currentElement, int numberOfElements) {
+        
+    }
+    protected void configureScreenButtons() {
+        
+    }
 }

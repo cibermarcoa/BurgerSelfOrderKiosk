@@ -9,5 +9,6 @@ package products;
  * @author nemo
  */
 public interface Product {
-    
+    public abstract int getPrice();
+    public abstract String getName();
 }

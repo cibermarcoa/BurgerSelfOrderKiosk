@@ -15,8 +15,17 @@ public class KioskManager {
         Context c = new Context();
         WellcomeScreen ws = new WellcomeScreen();
         
-        OrderScreen os = (OrderScreen) ws.show(c);
-        os.show(c);
+        KioskScreen nextScreen = ws.show(c);
         
+        while (true) {
+            nextScreen = nextScreen.show(c);
+        }
+        /*
+        OrderScreen os = (OrderScreen) ws.show(c);
+        SectionScreen tp = (SectionScreen) os.show(c);
+        ProductScreen ps = (ProductScreen) tp.show(c);
+        os = (OrderScreen) ps.show(c);
+        tp = (SectionScreen) os.show(c);
+        */
     }
 }

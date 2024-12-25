@@ -4,6 +4,9 @@
  */
 package manager;
 
+import products.Order;
+import products.MenuCard;
+
 /**
  *
  * @author cibermarcoa
@@ -18,11 +21,14 @@ public class Context {
         this.kiosk = new SimpleKiosk();
         this.translator = new TranslatorManager();
         this.order = new Order();
-        this.menuCard = new MenuCard();
+        try {
+            this.menuCard = MenuCard.loadFromDisk();
+        } catch (RuntimeException e) {
+            System.err.println(e);
+            this.menuCard = null;
+        }
+        
     }
-
-
-    
 
     public SimpleKiosk getKiosk() {
         return kiosk;
@@ -37,7 +43,7 @@ public class Context {
     }
 
     public MenuCard getMenuCard() {
-        return menuCard;
+        return this.menuCard;
     }
     
     public void setOrder(Order order) {
