@@ -17,7 +17,6 @@ public class MenuScreen implements KioskScreen {
     @Override
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
-        char res = '\0';
         
         // Mostrar opciones del menú principal
         k.clearScreen();
@@ -25,14 +24,14 @@ public class MenuScreen implements KioskScreen {
         k.setDescription("Elige una categoría:");
 
         // Mostrar opciones
-        k.setOption(1, "Hamburguesas");
-        k.setOption(2, "Bebidas");
-        k.setOption(3, "Complementos");
-        k.setOption(4, "Ver Pedido");
-        k.setOption(5, "Salir");
+        k.setOption(0, "Hamburguesas");
+        k.setOption(1, "Bebidas");
+        k.setOption(2, "Complementos");
+        k.setOption(3, "Salir");
+        
 
         // Esperar la selección del usuario
-        res = k.waitEvent(60);
+        char res = k.waitEvent(60);
 
         // Manejar la selección
         if (res == 'A') { // Hamburguesas
@@ -41,10 +40,8 @@ public class MenuScreen implements KioskScreen {
             return new SectionScreen();
         } else if (res == 'C') { // Complementos
             return new SectionScreen();
-        } else if (res == 'D') { // Ver Pedido
-            return new OrderScreen();
-        } else if (res == 'E') { // Salir
-            return new WellcomeScreen(); 
+        } else if (res == 'D') { // Salir
+            return new OrderScreen(); 
         }
 
         return null;

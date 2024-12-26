@@ -13,6 +13,9 @@ import manager.SimpleKiosk;
  */
 public class SectionScreen implements KioskScreen {
 
+    public SectionScreen() {
+    }
+
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
         k.clearScreen();
