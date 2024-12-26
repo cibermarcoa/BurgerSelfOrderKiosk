@@ -26,10 +26,19 @@ public class OrderScreen implements KioskScreen {
         char res = k.waitEvent(60);
         System.out.println(res);
         
-        if (res == 'B')
-            return new SectionScreen();
-        else
-            return null;
+        if (res == 'A') {
+            //return new MenuScreen();  
+        } else if (res == 'B') {
+            return new ProductScreen(1);  
+        } else if (res == 'C') {
+            //return new RemoveProductScreen(2);   crear el poder eliminar un producto
+        } else if (res == 'D') {
+            //return new PurchaseScreen(3);  crear el poder comprar un producto
+        } else if (res == 'E') {
+            return new WellcomeScreen();  
+        }
+
+        return null;
     }
     
     private void configureScreenButtons(SimpleKiosk kiosk) {
@@ -37,7 +46,7 @@ public class OrderScreen implements KioskScreen {
             kiosk.setOption(0, "Añadir menú al pedido");
             kiosk.setOption(1, "Añadir producto individual a pedido");
             kiosk.setOption(2, "Elimiar producto");
-            kiosk.setOption(4, "Terminar pedido");
-            kiosk.setOption(5, "Cancelar Pedido");
+            kiosk.setOption(3, "Terminar pedido");
+            kiosk.setOption(4, "Cancelar Pedido");
     }
 }

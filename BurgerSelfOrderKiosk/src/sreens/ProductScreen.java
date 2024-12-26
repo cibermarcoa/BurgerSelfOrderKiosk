@@ -25,6 +25,7 @@ public class ProductScreen implements KioskScreen {
     @Override
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
+        
         char res = '\0';
         int i = 0;
         int MAX_SIZE = c.getMenuCard().getSection(this.getSection()).getNumberOfProducts();
@@ -58,7 +59,7 @@ public class ProductScreen implements KioskScreen {
                 System.out.println("Error: No hay un pedido activo.");
             }
         }
-
+        
         return new OrderScreen();
     }
 /*
