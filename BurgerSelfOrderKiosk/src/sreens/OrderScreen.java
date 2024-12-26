@@ -16,7 +16,9 @@ public class OrderScreen implements KioskScreen {
 
     @Override
     public KioskScreen show(Context c) {
-        c.setOrder(new Order());
+        if (c.getOrder() == null) {
+            c.setOrder(new Order());
+        }
         SimpleKiosk k = c.getKiosk();
         k.clearScreen();
         this.configureScreenButtons(k);

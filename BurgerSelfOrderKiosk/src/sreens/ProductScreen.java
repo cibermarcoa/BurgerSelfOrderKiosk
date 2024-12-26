@@ -8,6 +8,7 @@ import manager.Context;
 import manager.SimpleKiosk;
 import products.IndividualProduct;
 import products.MenuCardSection;
+import products.Order;
 
 /**
  *
@@ -48,8 +49,16 @@ public class ProductScreen implements KioskScreen {
             else if (res == 'H')
                 i++;
         }
-        if (res == 'E')
-            c.getOrder().addProduct(ip);
+        if (res == 'E') {
+            Order currentOrder = c.getOrder();
+            if (currentOrder != null) {
+                currentOrder.addProduct(ip);
+                System.out.println("Producto añadido: " + ip.getName());
+            } else {
+                System.out.println("Error: No hay un pedido activo.");
+            }
+        }
+
         return new OrderScreen();
     }
 /*
