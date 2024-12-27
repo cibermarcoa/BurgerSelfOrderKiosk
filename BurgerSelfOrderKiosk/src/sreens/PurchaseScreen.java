@@ -10,6 +10,7 @@ package sreens;
  */
 
 import java.io.*;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.CommunicationException;
@@ -60,7 +61,7 @@ public class PurchaseScreen implements KioskScreen {
 
         
         // Esperar hasta que se inserte una tarjeta válida
-        long cardNumber = 0;
+        long cardNumber = k.getCardNumber();
         while (cardNumber == 0) { // Continuar esperando hasta obtener un número válido
             cardNumber = k.getCardNumber();
             if (cardNumber == 0) {
@@ -81,7 +82,10 @@ public class PurchaseScreen implements KioskScreen {
         int orderNumber = incrementOrderNumber();
         c.appendOrderToListFile(orderNumber, c.getOrder());
         writeOrderToFile(orderNumber, c.getOrder());
-
+        
+        // Imprimir el ticket
+        printTicket(k, orderNumber);
+        
         // Mostrar confirmación
         k.clearScreen();
         k.setTitle("Pago Exitoso");
@@ -137,4 +141,28 @@ public class PurchaseScreen implements KioskScreen {
         }
     }
     
+    
+    private void printTicket(SimpleKiosk kiosk, int orderNumber) {
+        try {
+            File file = new File("ticket_" + orderNumber + ".txt");
+            if (!file.exists()) {
+                System.out.println("Error: No se encontró el archivo del ticket.");
+                return;
+            }
+
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            StringBuilder ticketContent = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                ticketContent.append(line).append("\n");
+            }
+            br.close();
+
+            // Imprimir el contenido del ticket en el quiosco
+            kiosk.print(List.of(ticketContent.toString()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
