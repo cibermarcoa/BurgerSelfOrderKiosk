@@ -31,7 +31,7 @@ public class OrderScreen implements KioskScreen {
             } else if (res == 'B') {
                 return new SectionScreen();  
             }  else if (res == 'C') {
-                //return new PurchaseScreen(3);  crear el poder comprar un producto
+                return new PurchaseScreen();  
             } else if (res == 'D') {
                 return new WellcomeScreen();  
             }
