@@ -61,10 +61,18 @@ public class ProductScreen implements KioskScreen {
                 k.setOption(7, "&gt;");
             res = k.waitEvent(60);
             System.out.println(res);
+            
+            if (res == 'F')
+            {
+                c.setOrder(new Order());
+                return new OrderScreen();
+            }
+            
             if (res == 'G')
                 i--;
             else if (res == 'H')
                 i++;
+            
         }
         if (res == 'E') {
             Order currentOrder = c.getOrder();
