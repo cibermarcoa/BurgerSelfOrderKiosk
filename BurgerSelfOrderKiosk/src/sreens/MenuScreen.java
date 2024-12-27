@@ -35,11 +35,11 @@ public class MenuScreen implements KioskScreen {
 
         // Manejar la selección
         if (res == 'A') { // Hamburguesas
-            return new SectionScreen();
+            return new ProductScreen(0);
         } else if (res == 'B') { // Bebidas
-            return new SectionScreen();
+            return new ProductScreen(1);
         } else if (res == 'C') { // Complementos
-            return new SectionScreen();
+            return new ProductScreen(2);
         } else if (res == 'D') { // Salir
             return new OrderScreen(); 
         }

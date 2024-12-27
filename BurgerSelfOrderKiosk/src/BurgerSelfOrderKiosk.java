@@ -15,6 +15,7 @@ public class BurgerSelfOrderKiosk {
     /**
      * @param args the command line arguments
      */
+    //Test
     public static void main(String[] args) {
         KioskManager kioskManager = new KioskManager();
         kioskManager.start();
