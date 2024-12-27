@@ -4,6 +4,10 @@
  */
 package manager;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import products.Order;
 import products.MenuCard;
@@ -51,4 +55,23 @@ public class Context {
         this.order = order;
     }
     
+    public void appendOrderToListFile(int orderNumber, Order order) {
+        try {
+            File file = new File("order_list.txt");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file, true)); // `true` para modo de adición
+            bw.write("Número de Pedido: " + orderNumber + "\n");
+            bw.write("Resumen del Pedido:\n");
+            bw.write(order.getOrderText());
+            bw.write("Total: " + order.getTotalAmount() + "€\n");
+            bw.write("==================\n");
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

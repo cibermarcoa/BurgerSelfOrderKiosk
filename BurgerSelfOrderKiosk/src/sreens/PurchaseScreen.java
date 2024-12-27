@@ -58,17 +58,28 @@ public class PurchaseScreen implements KioskScreen {
         k.setTitle("Pago");
         k.setDescription("Introduce tu tarjeta de crédito:");
 
-        // Obtener el número de tarjeta
-        long cardNumber = k.getCardNumber();
+        
+        // Esperar hasta que se inserte una tarjeta válida
+        long cardNumber = 0;
+        while (cardNumber == 0) { // Continuar esperando hasta obtener un número válido
+            cardNumber = k.getCardNumber();
+            if (cardNumber == 0) {
+                k.setDescription("Por favor, introduce una tarjeta válida.");
+                k.waitEvent(60); // Esperar para permitir al usuario intentar nuevamente
+            }
+        }
 
         // Realizar la operación bancaria
         int totalAmount = c.getOrder().getTotalAmount();
         if (!bank.doOperation(cardNumber, totalAmount)) {
-            throw new CommunicationException("Error: Operación rechazada por el banco.");
+            k.setDescription("Error: Pago rechazado. Verifica tu tarjeta o saldo.");
+            k.waitEvent(60);
+            return new OrderScreen();
         }
 
         // Incrementar número de pedido y generar el ticket
         int orderNumber = incrementOrderNumber();
+        c.appendOrderToListFile(orderNumber, c.getOrder());
         writeOrderToFile(orderNumber, c.getOrder());
 
         // Mostrar confirmación
@@ -125,4 +136,5 @@ public class PurchaseScreen implements KioskScreen {
             e.printStackTrace();
         }
     }
+    
 }
