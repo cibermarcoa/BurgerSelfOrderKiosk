@@ -33,6 +33,7 @@ public class OrderScreen implements KioskScreen {
             }  else if (res == 'C') {
                 return new PurchaseScreen();  
             } else if (res == 'D') {
+                c.setOrder(new Order());
                 return new WellcomeScreen();  
             }
 ;           return null;
