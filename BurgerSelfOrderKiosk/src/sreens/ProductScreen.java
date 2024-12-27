@@ -16,9 +16,26 @@ import products.Order;
  */
 public class ProductScreen implements KioskScreen {
     private int section;
+    private boolean isMenu;
+    private int product;
     
-    public ProductScreen(int section) {
+    public ProductScreen(int section, int product)
+    {
         this.section = section;
+        this.product = product;
+    }
+
+    
+    public ProductScreen(int section)
+    {
+        this.section = section;
+        this.isMenu = false;
+    }
+    
+    public ProductScreen(int section, boolean isMenu) 
+    {
+        this.section = section;
+        this.isMenu = isMenu;
     }
 
 
@@ -58,8 +75,18 @@ public class ProductScreen implements KioskScreen {
                 System.out.println("Error: No hay un pedido activo.");
             }
         }
+        
+        if (isMenu)
+        {
+            section += 1;
+            return new MenuScreen(section);
+        }
+        else
+        {
+            return new OrderScreen();
+        }
 
-        return new OrderScreen();
+        
     }
 /*
     private void configureScreenButtons() {
