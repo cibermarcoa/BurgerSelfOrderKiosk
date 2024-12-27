@@ -89,7 +89,7 @@ public class PurchaseScreen implements KioskScreen {
         // Mostrar confirmación
         k.clearScreen();
         k.setTitle("Pago Exitoso");
-        k.setDescription("Tu número de pedido es: " + orderNumber);
+        k.setDescription("Tu número de pedido es: " + orderNumber + "\nTarjeta utilizada: " + cardNumber);
         k.waitEvent(60);
 
         return new WellcomeScreen(); // Regresar al inicio
