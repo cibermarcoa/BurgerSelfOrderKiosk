@@ -92,6 +92,8 @@ public class PurchaseScreen implements KioskScreen {
         k.setDescription("Tu número de pedido es: " + orderNumber + "\nTarjeta utilizada: " + cardNumber);
         k.waitEvent(10);
             
+        c.setOrder(new Order()); // Reseteamos la orden
+        
         return new WellcomeScreen(); // Regresar al inicio       
     }
 
