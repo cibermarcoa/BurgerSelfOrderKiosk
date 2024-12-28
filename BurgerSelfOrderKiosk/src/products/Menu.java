@@ -11,7 +11,7 @@ import java.util.List;
  * @author nemo
  */
 public class Menu implements Product {
-    private static int discount = 0;
+    private static int discount = 100;
     private String name;
     private List<IndividualProduct> products;
 

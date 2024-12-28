@@ -23,7 +23,7 @@ public class WellcomeScreen implements KioskScreen {
             return new OrderScreen();
         }
         else if (res == 'E') {
-            return new IdiomScreen();
+            //return new IdiomScreen();
         }
         return null;
     }      
