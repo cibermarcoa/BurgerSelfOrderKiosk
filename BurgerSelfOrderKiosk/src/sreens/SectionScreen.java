@@ -18,6 +18,7 @@ public class SectionScreen implements KioskScreen {
 
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
+        k.setMode();
         k.clearScreen();
         this.configureScreenButtons(k);
         char res = k.waitEvent(60);

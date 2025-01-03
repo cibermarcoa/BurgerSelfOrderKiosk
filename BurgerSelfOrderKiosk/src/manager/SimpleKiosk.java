@@ -32,6 +32,10 @@ public class SimpleKiosk {
         this.kiosk.setMenuMode();
     }
     
+    public void setMessageMode() {
+        this.kiosk.setMessageMode();
+    }
+    
     public synchronized char waitEvent(int seconds) {
         return this.kiosk.waitEvent(seconds);
     }
@@ -45,7 +49,7 @@ public class SimpleKiosk {
     }
     
     public boolean expelCreditCard(int seconds) {
-        return this.expelCreditCard(seconds);
+        return this.kiosk.expelCreditCard(seconds);
     }
     
     public void clearScreen() {

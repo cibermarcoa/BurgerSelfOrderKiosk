@@ -32,19 +32,18 @@ public class Context {
             System.err.println(e);
             this.menuCard = null;
         }
-        
     }
 
     public SimpleKiosk getKiosk() {
-        return kiosk;
+        return this.kiosk;
     }
 
     public TranslatorManager getTranslator() {
-        return translator;
+        return this.translator;
     }
 
     public Order getOrder() {
-        return order;
+        return this.order;
     }
 
     public MenuCard getMenuCard() {
@@ -61,7 +60,6 @@ public class Context {
             if (!file.exists()) {
                 file.createNewFile();
             }
-
             BufferedWriter bw = new BufferedWriter(new FileWriter(file, true)); // `true` para modo de adición
             bw.write("Número de Pedido: " + orderNumber + "\n");
             bw.write("Resumen del Pedido:\n");
@@ -73,5 +71,4 @@ public class Context {
             e.printStackTrace();
         }
     }
-
 }

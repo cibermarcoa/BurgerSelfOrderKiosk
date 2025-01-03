@@ -48,6 +48,7 @@ public class ProductScreen implements KioskScreen {
         IndividualProduct ip = null;
         
         while (res != 'E' && res != 'F') {
+            k.setMode();
             k.clearScreen();
             ip = c.getMenuCard().getSection(this.getSection()).getProduct(i);
             k.setTitle(ip.getName());

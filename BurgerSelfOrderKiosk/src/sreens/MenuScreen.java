@@ -32,6 +32,7 @@ public class MenuScreen implements KioskScreen
         SimpleKiosk k = c.getKiosk();
         
         // Mostrar opciones del menú principal
+        k.setMode();
         k.clearScreen();
         k.setTitle("Menú Principal");
         k.setDescription("Elige una categoría:");
