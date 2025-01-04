@@ -6,7 +6,7 @@ package products;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 public class IndividualProduct implements Product{
     private String name;

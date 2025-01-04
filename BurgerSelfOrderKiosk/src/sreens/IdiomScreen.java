@@ -11,7 +11,7 @@ import manager.TranslatorManager;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 
     

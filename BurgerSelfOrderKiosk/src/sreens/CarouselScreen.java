@@ -8,7 +8,7 @@ import manager.Context;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 public abstract class CarouselScreen implements KioskScreen {
     

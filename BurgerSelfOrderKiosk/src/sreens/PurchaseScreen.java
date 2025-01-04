@@ -6,7 +6,7 @@ package sreens;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 
 import java.io.*;

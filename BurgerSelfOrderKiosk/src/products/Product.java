@@ -6,7 +6,7 @@ package products;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 public interface Product {
     public abstract int getPrice();

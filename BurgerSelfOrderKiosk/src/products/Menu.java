@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 public class Menu implements Product {
     private static int discount = 100;

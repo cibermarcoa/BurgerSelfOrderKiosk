@@ -7,7 +7,7 @@ import sienens.BurgerSelfOrderKiosk;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 import java.util.List;
 public class SimpleKiosk {

@@ -9,7 +9,7 @@ import manager.SimpleKiosk;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 public class SectionScreen extends CarouselScreen {
 

@@ -12,42 +12,24 @@ import products.Order;
 
 /**
  *
- * @author nemo
+ * @author cibermarcoa
  */
 public class ProductScreen extends CarouselScreen {
     private int section;
-    private boolean isMenu;
-    private int product;
-    
-    public ProductScreen(int section, int product)
-    {
-        this.section = section;
-        this.product = product;
-    }
-
     
     public ProductScreen(int section)
     {
         this.section = section;
-        this.isMenu = false;
-    }
-    
-    public ProductScreen(int section, boolean isMenu) 
-    {
-        this.section = section;
-        this.isMenu = isMenu;
     }
 
 
     @Override
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
-        char res = '\0';
-        int i = 0;
-        int MAX_SIZE = c.getMenuCard().getSection(this.getSection()).getNumberOfProducts();
         IndividualProduct ip = null;
+        int i = 0;
         
-        while (res != 'E' && res != 'F') {
+        while (true) {
             k.setMode(1);
             k.clearScreen();
             ip = c.getMenuCard().getSection(this.getSection()).getProduct(i);
@@ -58,44 +40,27 @@ public class ProductScreen extends CarouselScreen {
             k.setOption(5, "Cancelar añadir");
             if (i > 0)
                 k.setOption(6, "&lt;");
-            if (i < MAX_SIZE - 1)
+            if (i < c.getMenuCard().getSection(this.getSection()).getNumberOfProducts() - 1)
                 k.setOption(7, "&gt;");
-            res = k.waitEvent(60);
+            char res = k.waitEvent(60);
             System.out.println(res);
             
             if (res == 'F')
-            {
-                c.setOrder(new Order());
                 return new OrderScreen();
-            }
-            
-            if (res == 'G')
+            else if (res == 'G')
                 i--;
             else if (res == 'H')
                 i++;
-            
-        }
-        if (res == 'E') {
-            Order currentOrder = c.getOrder();
-            if (currentOrder != null) {
-                currentOrder.addProduct(ip);
-                System.out.println("Producto añadido: " + ip.getName());
-            } else {
-                System.out.println("Error: No hay un pedido activo.");
+            else if (res == 'E') {
+                Order currentOrder = c.getOrder();
+                if (currentOrder != null) {
+                    currentOrder.addProduct(ip);
+                    System.out.println("Producto añadido: " + ip.getName());
+                } else
+                    System.err.println("Error: No hay un pedido activo.");
+                return new OrderScreen();
             }
         }
-        
-        if (isMenu)
-        {
-            section += 1;
-            return new MenuScreen(section);
-        }
-        else
-        {
-            return new OrderScreen();
-        }
-
-        
     }
 /*
     private void configureScreenButtons() {
