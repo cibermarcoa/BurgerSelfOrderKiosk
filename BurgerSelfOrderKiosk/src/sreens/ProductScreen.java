@@ -48,7 +48,7 @@ public class ProductScreen extends CarouselScreen {
         IndividualProduct ip = null;
         
         while (res != 'E' && res != 'F') {
-            k.setMode();
+            k.setMode(1);
             k.clearScreen();
             ip = c.getMenuCard().getSection(this.getSection()).getProduct(i);
             k.setTitle(ip.getName());

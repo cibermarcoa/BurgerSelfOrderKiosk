@@ -20,7 +20,7 @@ public class OrderScreen implements KioskScreen {
             c.setOrder(new Order());
         }
         SimpleKiosk k = c.getKiosk();
-        k.setMode();
+        k.setMode(1);
         k.clearScreen();
         this.configureScreenButtons(k);
         k.setDescription(c.getOrder().getOrderText());

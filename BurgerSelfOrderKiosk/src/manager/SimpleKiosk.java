@@ -28,12 +28,11 @@ public class SimpleKiosk {
     public void setDescription(String message) {
         this.kiosk.setDescription(message);
     }
-    public void setMode() { // +setMode(int) ?
-        this.kiosk.setMenuMode();
-    }
-    
-    public void setMessageMode() {
-        this.kiosk.setMessageMode();
+    public void setMode(int mode) {
+        if (mode == 1)
+            this.kiosk.setMenuMode();
+        else if (mode == 2)
+            this.kiosk.setMessageMode();
     }
     
     public synchronized char waitEvent(int seconds) {

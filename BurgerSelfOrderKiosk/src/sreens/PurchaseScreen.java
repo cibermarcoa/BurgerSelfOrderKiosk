@@ -34,7 +34,7 @@ public class PurchaseScreen implements KioskScreen {
         SimpleKiosk k = c.getKiosk();
         Order o = c.getOrder();
         
-        k.setMessageMode();
+        k.setMode(2);
         k.clearScreen();
         // Mostrar resumen del pedido
         k.setTitle("Resumen del Pedido");
@@ -43,7 +43,7 @@ public class PurchaseScreen implements KioskScreen {
         k.setOption(1, "Cancelar pago");
         
         if (!bank.comunicationAvaiable()) {
-            k.setMessageMode();
+            k.setMode(2);
             k.clearScreen();
             k.setTitle("Banco no disponible");
             k.setDescription("El banco no está disponible en este momento. Inténtelo más tarde.");
@@ -61,7 +61,7 @@ public class PurchaseScreen implements KioskScreen {
                     int orderNumber = this.incrementOrderNumber();
                     this.writeOrderToFile(orderNumber, o);
 
-                    k.setMessageMode();
+                    k.setMode(2);
                     k.clearScreen();
                     k.setTitle("Proceso de pago exitoso");
                     k.setDescription("Ya puedes recoger tu tarjeta\nTu número de pedido es el " + orderNumber + "\nRecoge el ticket\nPermanece atento a las pantallas");
@@ -72,7 +72,7 @@ public class PurchaseScreen implements KioskScreen {
                     k.print(ticketText);
                 } else {
                     // Proceso de pago fallido
-                    k.setMessageMode();
+                    k.setMode(2);
                     k.clearScreen();
                     k.setTitle("Problemas en el proceso de pago");
                     k.setDescription("El banco dice que no tienes dinero. Prueba con otra tarjeta.");

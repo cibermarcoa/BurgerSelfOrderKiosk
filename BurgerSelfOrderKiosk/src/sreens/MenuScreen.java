@@ -32,7 +32,7 @@ public class MenuScreen extends CarouselScreen
         SimpleKiosk k = c.getKiosk();
         
         // Mostrar opciones del menú principal
-        k.setMode();
+        k.setMode(1);
         k.clearScreen();
         k.setTitle("Menú Principal");
         k.setDescription("Elige una categoría:");

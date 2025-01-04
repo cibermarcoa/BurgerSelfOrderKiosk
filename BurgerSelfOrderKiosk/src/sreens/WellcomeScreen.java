@@ -15,7 +15,7 @@ public class WellcomeScreen implements KioskScreen {
     @Override
     public KioskScreen show(Context c) {
         SimpleKiosk kiosk = c.getKiosk();
-        kiosk.setMode();
+        kiosk.setMode(1);
         kiosk.clearScreen();
         this.configureScreenButtons(kiosk);
         char res = kiosk.waitEvent(60);

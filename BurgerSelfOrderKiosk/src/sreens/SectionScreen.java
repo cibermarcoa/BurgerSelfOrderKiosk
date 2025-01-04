@@ -18,7 +18,7 @@ public class SectionScreen extends CarouselScreen {
 
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
-        k.setMode();
+        k.setMode(1);
         k.clearScreen();
         this.configureScreenButtons(k);
         char res = k.waitEvent(60);
@@ -37,7 +37,7 @@ public class SectionScreen extends CarouselScreen {
     }
 
     private void configureScreenButtons(SimpleKiosk kiosk) {
-        kiosk.setMode();
+        kiosk.setMode(1);
         kiosk.setOption(0, "Hamburgesa");
         kiosk.setOption(1, "Bebida");
         kiosk.setOption(2, "Complemento");
