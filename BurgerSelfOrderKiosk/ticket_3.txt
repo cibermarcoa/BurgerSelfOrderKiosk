@@ -1,0 +1,13 @@
+Número de pedido: 3
+
+Artículos comprados
+=====================
+
+VEGETAL: 1000
+CERVEZA: 200
+NUGGETS_VEGETALES: 500
+
+=====================
+
+Total: 1700€
+

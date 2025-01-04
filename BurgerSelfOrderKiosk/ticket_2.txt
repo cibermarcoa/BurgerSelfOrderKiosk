@@ -1,0 +1,13 @@
+Número de pedido: 2
+
+Artículos comprados
+=====================
+
+ANGUS: 2000
+CERVEZA: 200
+POLLO: 1500
+
+=====================
+
+Total: 3700€
+

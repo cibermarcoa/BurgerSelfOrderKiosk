@@ -1,0 +1,23 @@
+Número de pedido: 1
+
+Artículos comprados
+=====================
+
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+ANGUS: 2000
+
+=====================
+
+Total: 26000€
+
