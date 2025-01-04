@@ -12,9 +12,10 @@ import manager.Context;
  */
 public abstract class CarouselScreen implements KioskScreen {
     
+    /*
     protected void adjustCarruselButtons(int currentElement, int numberOfElements) {
         
-    }
+    }*/
     protected void configureScreenButtons() {
         
     }

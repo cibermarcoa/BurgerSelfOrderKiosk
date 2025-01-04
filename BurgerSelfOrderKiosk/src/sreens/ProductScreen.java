@@ -14,7 +14,7 @@ import products.Order;
  *
  * @author nemo
  */
-public class ProductScreen implements KioskScreen {
+public class ProductScreen extends CarouselScreen {
     private int section;
     private boolean isMenu;
     private int product;

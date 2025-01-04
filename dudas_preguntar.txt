@@ -16,3 +16,7 @@ Menu
 +getProduct(int): IndividualProduct
 +getNumProducts(): int
 +getName(): String
+
+
+si metes la tarjeta peta
+mode 1-2

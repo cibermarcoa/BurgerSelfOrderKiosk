@@ -11,7 +11,7 @@ import manager.SimpleKiosk;
  *
  * @author nemo
  */
-public class SectionScreen implements KioskScreen {
+public class SectionScreen extends CarouselScreen {
 
     public SectionScreen() {
     }

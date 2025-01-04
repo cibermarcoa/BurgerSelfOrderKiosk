@@ -12,7 +12,7 @@ import products.MenuCard;
  *
  * @author nemo
  */
-public class MenuScreen implements KioskScreen 
+public class MenuScreen extends CarouselScreen 
 {
     
     private int index;

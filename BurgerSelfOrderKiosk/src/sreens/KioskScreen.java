@@ -13,9 +13,3 @@ import manager.Context;
 public interface KioskScreen {
     KioskScreen show(Context c);
 }
-
-/*
-«interface»
-KioskScreen
-+show(Context): KioskScreen
-*/
