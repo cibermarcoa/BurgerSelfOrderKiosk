@@ -15,7 +15,7 @@ import manager.TranslatorManager;
  */
 
     
-/*public class IdiomScreen extends CarouselScreen {
+public class IdiomScreen extends CarouselScreen {
 
     @Override
     public KioskScreen show(Context c) {
@@ -33,9 +33,9 @@ import manager.TranslatorManager;
             kiosk.setDescription("Idioma Actual: " + idioms.get(currentElement));
             kiosk.setOption(4, "Seleccionar");
             kiosk.setOption(5, "Cancelar");
-
+/*
             // Ajustar botones de carrusel
-            adjustCarruselButtons(currentElement, idioms.size());
+            this.adjustCarruselButtons(currentElement, idioms.size(), kiosk);
 
             // Esperar evento
             char res = kiosk.waitEvent(60);
@@ -49,27 +49,7 @@ import manager.TranslatorManager;
                 currentElement--;
             } else if (res == 'H' && currentElement < idioms.size() - 1) { // Ir al siguiente idioma
                 currentElement++;
-            }
+            }*/
         }
     }
-
-    @Override
-    protected void adjustCarruselButtons(int currentElement, int numberOfElements) {
-        SimpleKiosk kiosk = getKiosk();
-        if (currentElement > 0) {
-            kiosk.setOption(6, "<");
-        }
-        if (currentElement < numberOfElements - 1) {
-            kiosk.setOption(7, ">");
-        }
-    }
-
-    @Override
-    protected void configureScreenButtons() {
-        // No es necesario en este caso porque los botones se configuran dinámicamente en `show`
-    }
-    
-    protected SimpleKiosk getKiosk() {
-        return this.context.getKiosk(); 
-    }
-}*/
+}

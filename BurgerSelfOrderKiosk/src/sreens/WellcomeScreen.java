@@ -30,8 +30,8 @@ public class WellcomeScreen implements KioskScreen {
         
         if (res == 'A')
             return new OrderScreen();
-        // else if (res == 'E')
-            // return new IdiomScreen();
+        else if (res == 'E')
+            return new IdiomScreen();
         return null;
     }
 
