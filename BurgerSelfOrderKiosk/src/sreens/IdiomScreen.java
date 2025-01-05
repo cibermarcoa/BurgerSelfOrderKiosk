@@ -25,17 +25,21 @@ public class IdiomScreen extends CarouselScreen {
         // Obtener los idiomas disponibles
         List<String> idioms = translatorManager.getIdioms();
 
+
         int currentElement = 0;
-        while (true) {
+        //while (true) {
             // Configurar pantalla con el idioma actual
+            kiosk.setMode(2);
             kiosk.clearScreen();
             kiosk.setTitle("Seleccionar Idioma");
-            kiosk.setDescription("Idioma Actual: " + idioms.get(currentElement));
+            //kiosk.setDescription("Idioma Actual: " + idioms.get(currentElement));
             kiosk.setOption(4, "Seleccionar");
             kiosk.setOption(5, "Cancelar");
-/*
+        for (String id : idioms) {
+            System.out.println(id);
+        }
             // Ajustar botones de carrusel
-            this.adjustCarruselButtons(currentElement, idioms.size(), kiosk);
+            //this.adjustCarruselButtons(currentElement, idioms.size(), kiosk);
 
             // Esperar evento
             char res = kiosk.waitEvent(60);
@@ -49,7 +53,8 @@ public class IdiomScreen extends CarouselScreen {
                 currentElement--;
             } else if (res == 'H' && currentElement < idioms.size() - 1) { // Ir al siguiente idioma
                 currentElement++;
-            }*/
-        }
+            }
+        //}
+        return null;
     }
 }
