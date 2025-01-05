@@ -26,7 +26,7 @@ public class Menu implements Product {
         for (IndividualProduct product : products) {
             totalPrice += product.getPrice();
         }
-        return totalPrice - discount;
+        return (totalPrice - discount);
     }
     
     @Override
@@ -43,5 +43,16 @@ public class Menu implements Product {
     
     public int getNumProducts() {
         return this.products.size();
+    }
+    
+    public static void setDiscount(int newDiscount) {
+        if (newDiscount < 0) {
+            throw new IllegalArgumentException("El descuento no puede ser negativo");
+        }
+        discount = newDiscount; 
+    }
+
+    public static int getDiscount() {
+        return discount;
     }
 }

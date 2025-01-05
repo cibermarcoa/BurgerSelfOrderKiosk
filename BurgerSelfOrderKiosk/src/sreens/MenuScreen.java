@@ -9,6 +9,7 @@ import java.util.List;
 import manager.Context;
 import manager.SimpleKiosk;
 import products.IndividualProduct;
+import products.Menu;
 import products.MenuCard;
 import products.Order;
 
@@ -44,9 +45,19 @@ public class MenuScreen extends CarouselScreen
             char res = k.waitEvent(60);
             System.out.println(res);
 
-            if (res == 'F')
-                return new OrderScreen();
-            else if (res == 'G')
+            if (res == 'F') {
+                k.clearScreen();
+                k.setTitle("¿Estás seguro?");
+                k.setDescription("Se perderá el menú actual.");
+                k.setOption(4, "Sí, cancelar");
+                k.setOption(5, "No, seguir seleccionando");
+
+                char confirmRes = k.waitEvent(60);
+                if (confirmRes == 'E') {
+                    return new OrderScreen(); // Confirmación de cancelación
+                }
+                continue;
+            }else if (res == 'G')
                 i--;
             else if (res == 'H')
                 i++;
@@ -59,11 +70,23 @@ public class MenuScreen extends CarouselScreen
         }
 
         Order currentOrder = c.getOrder();
-        if (currentOrder != null)
-            for (IndividualProduct productInMenu : menu)
-                currentOrder.addProduct(productInMenu);
-        else
-            System.err.println("Error: No hay un pedido activo.");
+        if (currentOrder != null) {
+            StringBuilder menuDetails = new StringBuilder("Menú: ");
+            for (IndividualProduct productInMenu : menu) {
+                menuDetails.append(productInMenu.getName()).append(", ");
+            }
+            
+            if (menuDetails.length() > 0) {
+                menuDetails.setLength(menuDetails.length() - 2);
+            }
+
+            Menu menuFinal = new Menu(menuDetails.toString(), menu);
+            currentOrder.addProduct(menuFinal);  // Añadir el menú al pedido
+            System.out.println("Menú añadido al pedido con descuento.");
+            return new OrderScreen();  // Volver al resumen del pedido
+        } else {
+            System.err.println("Error: No hay un pedido activo.");           
+        }
         
         return new OrderScreen();
     }
