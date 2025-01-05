@@ -35,6 +35,8 @@ public class OrderScreen implements KioskScreen {
         else if (res == 'D') {
             c.setOrder(new Order());
             return new WellcomeScreen();  
+        }else if (res == 'E') {
+            return new RemoveProductScreen(); 
         }
         return null;
     }
@@ -48,5 +50,6 @@ public class OrderScreen implements KioskScreen {
         kiosk.setOption(1, "Añadir producto individual a pedido");
         kiosk.setOption(2, "Terminar pedido");
         kiosk.setOption(3, "Cancelar Pedido");
+        kiosk.setOption(4, "Eliminar producto");
     }
 }
