@@ -14,12 +14,19 @@ import products.MenuCard;
 import products.Order;
 
 /**
- *
+ * Esta clase representa una pantalla de selección para la creación de un menú.
+ * Los usuarios pueden navegar entre productos y añadirlos a un menú, que se agrega al pedido con un descuento.
+ * 
  * @author cibermarcoa
  */
 public class MenuScreen extends CarouselScreen 
 {
-        
+     /**
+     * Muestra la pantalla de creación de menú y gestiona la selección de productos por parte del usuario.
+     *
+     * @param c el contexto que contiene el quiosco, la carta del menú y el pedido actual
+     * @return la siguiente pantalla a mostrar, típicamente la pantalla con la orden (OrderScreen)
+     */
     @Override
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
@@ -30,18 +37,17 @@ public class MenuScreen extends CarouselScreen
         int i = 0;
 
         while (section < 3) {
-            k.setMode(1);
-            k.clearScreen();
+            this.configureScreenButtons(k);
+            
             ip = c.getMenuCard().getSection(section).getProduct(i);
             k.setTitle(ip.getName());
             k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$");
             k.setImage("src/" + ip.getImageFileName());
             k.setOption(4, "Añadir al pedido");
             k.setOption(5, "Cancelar añadir");
-            if (i > 0)
-                k.setOption(6, "&lt;");
-            if (i < c.getMenuCard().getSection(section).getNumberOfProducts() - 1)
-                k.setOption(7, "&gt;");
+            
+            this.adjustCarruselButtons(i, c.getMenuCard().getSection(section).getNumberOfProducts() - 1, k);
+            
             char res = k.waitEvent(60);
             System.out.println(res);
 

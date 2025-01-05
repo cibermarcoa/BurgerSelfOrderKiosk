@@ -40,7 +40,6 @@ public class ProductScreen extends CarouselScreen {
 
             this.adjustCarruselButtons(i, c.getMenuCard().getSection(this.getSection()).getNumberOfProducts() - 1, k);
 
-
             char res = k.waitEvent(60);
             System.out.println(res);
             
@@ -61,18 +60,19 @@ public class ProductScreen extends CarouselScreen {
             }
         }
     }
-/*
+    /*
     private void configureScreenButtons() {
         
         k.setMode(1);
         k.clearScreen();
 
-    }*/
+    }
 
     public void ProductSelectionScreen(int section) {
         
     }
 
+    */
     private int getSection() {
         return this.section;
     }

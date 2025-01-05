@@ -34,14 +34,8 @@ public class PurchaseScreen implements KioskScreen {
         SimpleKiosk k = c.getKiosk();
         Order o = c.getOrder();
         
-        k.setMode(2);
-        k.clearScreen();
-        // Mostrar resumen del pedido
-        k.setTitle("Resumen del Pedido");
-        k.setDescription("Introduce tu tarjeta de crédito\n" + o.getOrderText() + "\nTotal: " + o.getTotalAmount() + "€");
-        k.setOption(0, "Cancelar pedido");
-        k.setOption(1, "Cancelar pago");
-        
+        this.configureScreenButtons(k, o);
+
         if (!bank.comunicationAvaiable()) {
             k.setMode(2);
             k.clearScreen();
@@ -164,5 +158,15 @@ public class PurchaseScreen implements KioskScreen {
         }
 
         return ticketContent;
+    }
+    
+    private void configureScreenButtons(SimpleKiosk k, Order o) {
+        k.setMode(2);
+        k.clearScreen();
+        k.setTitle("Resumen del Pedido");
+        k.setDescription("Introduce tu tarjeta de crédito\n" + o.getOrderText() + "\nTotal: " + o.getTotalAmount() + "€");
+        k.setOption(0, "Cancelar pedido");
+        k.setOption(1, "Cancelar pago");
+        
     }
 }

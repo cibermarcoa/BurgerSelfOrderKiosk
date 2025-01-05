@@ -8,16 +8,22 @@ import manager.Context;
 import manager.SimpleKiosk;
 
 /**
- *
+ * Esta clase representa una pantalla que muestra la eleccion del tipo de producto.
+ * Cada sección permite la navegación a una pantalla específica de productos individuales.
  * @author cibermarcoa
  */
 public class SectionScreen extends CarouselScreen {
 
-    public SectionScreen() {
-    }
-
+    /**
+     * Muestra la pantalla de secciones.
+     *
+     * @param c el contexto que contiene la información del quiosco y la carta de menú
+     * @return la siguiente pantalla a mostrar según la interacción del usuario
+     */
+    @Override
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
+        super.configureScreenButtons(k);
         this.configureScreenButtons(k);
         char res = k.waitEvent(60);
         System.out.println(res);
@@ -30,18 +36,13 @@ public class SectionScreen extends CarouselScreen {
         
     }
 
-    protected void adjustCarruselButtons(int currentElement, int numberOfElements) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     /**
+     * Configura los botones de la pantalla de secciones con las opciones disponibles.
      *
-     * @param kiosk
+     * @param kiosk el quiosco donde se configuran las opciones de los botones
      */
     @Override
     protected void configureScreenButtons(SimpleKiosk kiosk) {
-        kiosk.setMode(1);
-        kiosk.clearScreen();
         kiosk.setOption(0, "Hamburgesa");
         kiosk.setOption(1, "Bebida");
         kiosk.setOption(2, "Complemento");

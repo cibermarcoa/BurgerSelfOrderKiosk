@@ -1,0 +1,12 @@
+Número de pedido: 5
+
+Artículos comprados
+=====================
+
+Menú: ANGUS, COCA COLA NORMAL, ALITAS: 2450
+CERVEZA: 200
+
+=====================
+
+Total: 2650€
+
