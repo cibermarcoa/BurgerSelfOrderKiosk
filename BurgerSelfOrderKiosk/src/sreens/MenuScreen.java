@@ -56,7 +56,6 @@ public class MenuScreen extends CarouselScreen
                 if (confirmRes == 'E') {
                     return new OrderScreen(); // Confirmación de cancelación
                 }
-                continue;
             }else if (res == 'G')
                 i--;
             else if (res == 'H')

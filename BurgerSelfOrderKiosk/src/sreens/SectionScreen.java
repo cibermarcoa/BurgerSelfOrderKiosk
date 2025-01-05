@@ -18,8 +18,6 @@ public class SectionScreen extends CarouselScreen {
 
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
-        k.setMode(1);
-        k.clearScreen();
         this.configureScreenButtons(k);
         char res = k.waitEvent(60);
         System.out.println(res);
@@ -36,8 +34,14 @@ public class SectionScreen extends CarouselScreen {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    private void configureScreenButtons(SimpleKiosk kiosk) {
+    /**
+     *
+     * @param kiosk
+     */
+    @Override
+    protected void configureScreenButtons(SimpleKiosk kiosk) {
         kiosk.setMode(1);
+        kiosk.clearScreen();
         kiosk.setOption(0, "Hamburgesa");
         kiosk.setOption(1, "Bebida");
         kiosk.setOption(2, "Complemento");

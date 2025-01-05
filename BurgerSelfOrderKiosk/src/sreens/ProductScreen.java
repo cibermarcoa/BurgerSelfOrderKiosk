@@ -30,18 +30,17 @@ public class ProductScreen extends CarouselScreen {
         int i = 0;
         
         while (true) {
-            k.setMode(1);
-            k.clearScreen();
+            this.configureScreenButtons(k);
+            k.setOption(4, "Añadir al pedido");
+            k.setOption(5, "Cancelar añadir");
             ip = c.getMenuCard().getSection(this.getSection()).getProduct(i);
             k.setTitle(ip.getName());
             k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$");
             k.setImage("src/" + ip.getImageFileName());
-            k.setOption(4, "Añadir al pedido");
-            k.setOption(5, "Cancelar añadir");
-            if (i > 0)
-                k.setOption(6, "&lt;");
-            if (i < c.getMenuCard().getSection(this.getSection()).getNumberOfProducts() - 1)
-                k.setOption(7, "&gt;");
+
+            this.adjustCarruselButtons(i, c.getMenuCard().getSection(this.getSection()).getNumberOfProducts() - 1, k);
+
+
             char res = k.waitEvent(60);
             System.out.println(res);
             
@@ -65,10 +64,15 @@ public class ProductScreen extends CarouselScreen {
 /*
     private void configureScreenButtons() {
         
-    }
+        k.setMode(1);
+        k.clearScreen();
+
+    }*/
+
     public void ProductSelectionScreen(int section) {
         
-    }*/
+    }
+
     private int getSection() {
         return this.section;
     }

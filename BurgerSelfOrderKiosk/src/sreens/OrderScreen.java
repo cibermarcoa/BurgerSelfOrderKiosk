@@ -35,9 +35,14 @@ public class OrderScreen implements KioskScreen {
         else if (res == 'D') {
             c.setOrder(new Order());
             return new WellcomeScreen();  
-        }else if (res == 'E') {
+        } else if (res == 'E')
             return new RemoveProductScreen(); 
+        else if (res == '1') { // Gestionar que se meta una tarjeta cuando no procede
+            k.retainCard(false);
+            k.expelCreditCard(0);
+            return this.show(c);
         }
+        
         return null;
     }
     

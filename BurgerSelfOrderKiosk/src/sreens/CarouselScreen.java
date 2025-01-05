@@ -5,6 +5,7 @@
 package sreens;
 
 import manager.Context;
+import manager.SimpleKiosk;
 
 /**
  *
@@ -12,11 +13,15 @@ import manager.Context;
  */
 public abstract class CarouselScreen implements KioskScreen {
     
-    /*
-    protected void adjustCarruselButtons(int currentElement, int numberOfElements) {
-        
-    }*/
-    protected void configureScreenButtons() {
-        
+    protected void adjustCarruselButtons(int currentElement, int numberOfElements, SimpleKiosk k) {
+        if (currentElement > 0)
+            k.setOption(6, "&lt;");
+        if (currentElement < numberOfElements)
+            k.setOption(7, "&gt;");
+    }
+
+    protected void configureScreenButtons(SimpleKiosk k) {
+        k.setMode(1);
+        k.clearScreen();
     }
 }
