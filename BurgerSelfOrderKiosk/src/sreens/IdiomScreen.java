@@ -29,7 +29,7 @@ public class IdiomScreen extends CarouselScreen {
         int currentElement = 0;
         //while (true) {
             // Configurar pantalla con el idioma actual
-            kiosk.setMode(2);
+            kiosk.setMode(1);
             kiosk.clearScreen();
             kiosk.setTitle("Seleccionar Idioma");
             //kiosk.setDescription("Idioma Actual: " + idioms.get(currentElement));
