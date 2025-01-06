@@ -24,7 +24,7 @@ public class SectionScreen extends CarouselScreen {
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
         super.configureScreenButtons(k);
-        this.configureScreenButtons(k);
+        this.configureScreenButtons(k, c);
         char res = k.waitEvent(60);
         System.out.println(res);
         return switch (res) {
@@ -40,11 +40,13 @@ public class SectionScreen extends CarouselScreen {
      * Configura los botones de la pantalla de secciones con las opciones disponibles.
      *
      * @param kiosk el quiosco donde se configuran las opciones de los botones
+     * @param c
      */
-    @Override
-    protected void configureScreenButtons(SimpleKiosk kiosk) {
-        kiosk.setOption(0, "Hamburgesa");
-        kiosk.setOption(1, "Bebida");
-        kiosk.setOption(2, "Complemento");
+    
+
+    protected void configureScreenButtons(SimpleKiosk kiosk, Context c) {
+        kiosk.setOption(0, "Hamburguesa", c);
+        kiosk.setOption(1, "Bebida", c);
+        kiosk.setOption(2, "Complemento", c);
     }
 }

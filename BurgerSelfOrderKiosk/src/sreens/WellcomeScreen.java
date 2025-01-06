@@ -23,7 +23,7 @@ public class WellcomeScreen implements KioskScreen {
     public KioskScreen show(Context c) {
         SimpleKiosk kiosk = c.getKiosk();
 
-        this.configureScreenButtons(kiosk);
+        this.configureScreenButtons(kiosk, c);
         
         char res = kiosk.waitEvent(60);
         System.out.println(res);
@@ -40,10 +40,11 @@ public class WellcomeScreen implements KioskScreen {
      *
      * @param kiosk el quiosco donde se configuran las opciones de los botones
      */
-    private void configureScreenButtons(SimpleKiosk kiosk) {
+    
+    private void configureScreenButtons(SimpleKiosk kiosk, Context c) {
         kiosk.setMode(1);
         kiosk.clearScreen();
-        kiosk.setOption(0, "Nuevo pedido");
-        kiosk.setOption(4, "Cambiar idioma");
+        kiosk.setOption(0, "Nuevo pedido",c);
+        kiosk.setOption(4, "Cambiar idioma", c);
     }
 }

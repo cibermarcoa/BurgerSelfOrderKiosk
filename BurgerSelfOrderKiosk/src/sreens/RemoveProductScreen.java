@@ -38,10 +38,10 @@ public class RemoveProductScreen implements KioskScreen{
             k.clearScreen();
             k.setTitle("Eliminar Producto");
             k.setDescription("¿Eliminar: " + productToDelete.getName() + "?");
-            k.setOption(4, "Sí, eliminar");
-            k.setOption(5, "No, cancelar");
-            if (currentIndex > 0) k.setOption(6, "< Anterior");
-            if (currentIndex < products.size() - 1) k.setOption(7, "Siguiente >");
+            k.setOption(4, "Sí, eliminar", c);
+            k.setOption(5, "No, cancelar", c);
+            if (currentIndex > 0) k.setOption(6, "< Anterior", c);
+            if (currentIndex < products.size() - 1) k.setOption(7, "Siguiente >", c);
 
             char res = k.waitEvent(60);
             System.out.println(res);

@@ -1,2 +1,20 @@
 Nuevo pedido:New order
 Cambiar idioma:Change languaje
+Seleccionar:Select
+Cancelar:Cancel
+Añadir menú al pedido:Add menu to the order
+Añadir producto individual a pedido:Add individual product to the order
+Terminar pedido:Finalize order
+Cancelar Pedido:Cancel Order
+Eliminar producto:Delete product
+Añadir al pedido:Add to the order
+Cancelar añadir:Cancel product
+Hamburguesa:Hamburguer
+Bebida:Drink
+Complemento:Complement
+Sí, eliminar:Yes, delete it
+No, cancelar:No, cancel it
+Siguiente:Next
+Anterior:Previous
+Cancelar pedido:Cancel the order
+Cancelar pago:Cancel the payment

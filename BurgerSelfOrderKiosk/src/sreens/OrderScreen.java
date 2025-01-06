@@ -51,10 +51,10 @@ public class OrderScreen implements KioskScreen {
         kiosk.clearScreen();
         kiosk.setTitle("¿Qué quieres hacer?");
         kiosk.setDescription(context.getOrder().getOrderText());
-        kiosk.setOption(0, "Añadir menú al pedido");
-        kiosk.setOption(1, "Añadir producto individual a pedido");
-        kiosk.setOption(2, "Terminar pedido");
-        kiosk.setOption(3, "Cancelar Pedido");
-        kiosk.setOption(4, "Eliminar producto");
+        kiosk.setOption(0, "Añadir menú al pedido", context);
+        kiosk.setOption(1, "Añadir producto individual a pedido", context);
+        kiosk.setOption(2, "Terminar pedido", context);
+        kiosk.setOption(3, "Cancelar Pedido", context);
+        kiosk.setOption(4, "Eliminar producto", context);
     }
 }

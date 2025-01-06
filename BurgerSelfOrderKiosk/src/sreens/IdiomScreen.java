@@ -27,19 +27,19 @@ public class IdiomScreen extends CarouselScreen {
 
 
         int currentElement = 0;
-        //while (true) {
+        while (true) {
             // Configurar pantalla con el idioma actual
             kiosk.setMode(1);
             kiosk.clearScreen();
             kiosk.setTitle("Seleccionar Idioma");
-            //kiosk.setDescription("Idioma Actual: " + idioms.get(currentElement));
-            kiosk.setOption(4, "Seleccionar");
-            kiosk.setOption(5, "Cancelar");
+            kiosk.setDescription("Idioma Actual: " + idioms.get(currentElement));
+            kiosk.setOption(4, "Seleccionar", c);
+            kiosk.setOption(5, "Cancelar", c);
         for (String id : idioms) {
             System.out.println(id);
         }
             // Ajustar botones de carrusel
-            //this.adjustCarruselButtons(currentElement, idioms.size(), kiosk);
+            this.adjustCarruselButtons(currentElement, idioms.size(), kiosk, c);
 
             // Esperar evento
             char res = kiosk.waitEvent(60);
@@ -54,7 +54,7 @@ public class IdiomScreen extends CarouselScreen {
             } else if (res == 'H' && currentElement < idioms.size() - 1) { // Ir al siguiente idioma
                 currentElement++;
             }
-        //}
-        return null;
+        }
+        //return null;
     }
 }
