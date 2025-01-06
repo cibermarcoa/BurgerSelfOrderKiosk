@@ -23,7 +23,7 @@ public class RemoveProductScreen implements KioskScreen{
         
         if(currentOrder == null || currentOrder.getProducts().isEmpty()){
             k.clearScreen();
-            k.setTitle("Eliminar Producto");
+            k.setTitle("Eliminar Producto", c);
             k.setDescription("La orden está vacía. No hay productos que eliminar.");
             k.waitEvent(60);
             return new OrderScreen();
@@ -36,7 +36,7 @@ public class RemoveProductScreen implements KioskScreen{
             Product productToDelete = products.get(currentIndex);
 
             k.clearScreen();
-            k.setTitle("Eliminar Producto");
+            k.setTitle("Eliminar Producto",c);
             k.setDescription("¿Eliminar: " + productToDelete.getName() + "?");
             k.setOption(4, "Sí, eliminar", c);
             k.setOption(5, "No, cancelar", c);

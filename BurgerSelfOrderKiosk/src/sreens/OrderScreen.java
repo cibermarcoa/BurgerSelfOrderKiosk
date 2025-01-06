@@ -49,7 +49,7 @@ public class OrderScreen implements KioskScreen {
     private void configureScreenButtons(SimpleKiosk kiosk, Context context) {
         kiosk.setMode(1);
         kiosk.clearScreen();
-        kiosk.setTitle("¿Qué quieres hacer?");
+        kiosk.setTitle("¿Qué quieres hacer?",context);
         kiosk.setDescription(context.getOrder().getOrderText());
         kiosk.setOption(0, "Añadir menú al pedido", context);
         kiosk.setOption(1, "Añadir producto individual a pedido", context);

@@ -31,7 +31,7 @@ public class IdiomScreen extends CarouselScreen {
             // Configurar pantalla con el idioma actual
             kiosk.setMode(1);
             kiosk.clearScreen();
-            kiosk.setTitle("Seleccionar Idioma");
+            kiosk.setTitle("Seleccionar Idioma", c);
             kiosk.setDescription("Idioma Actual: " + idioms.get(currentElement));
             kiosk.setOption(4, "Seleccionar", c);
             kiosk.setOption(5, "Cancelar", c);

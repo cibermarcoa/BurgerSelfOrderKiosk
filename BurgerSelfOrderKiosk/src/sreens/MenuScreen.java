@@ -40,7 +40,7 @@ public class MenuScreen extends CarouselScreen
             this.configureScreenButtons(k);
             
             ip = c.getMenuCard().getSection(section).getProduct(i);
-            k.setTitle(ip.getName());
+            k.setTitle(ip.getName(), c);
             k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$");
             k.setImage("src/" + ip.getImageFileName());
             k.setOption(4, "Añadir al pedido", c);
@@ -53,7 +53,7 @@ public class MenuScreen extends CarouselScreen
 
             if (res == 'F') {
                 k.clearScreen();
-                k.setTitle("¿Estás seguro?");
+                k.setTitle("¿Estás seguro?", c);
                 k.setDescription("Se perderá el menú actual.");
                 k.setOption(4, "Sí, cancelar", c);
                 k.setOption(5, "No, seguir seleccionando", c);

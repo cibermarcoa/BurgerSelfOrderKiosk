@@ -34,7 +34,7 @@ public class ProductScreen extends CarouselScreen {
             k.setOption(4, "Añadir al pedido", c);
             k.setOption(5, "Cancelar añadir", c);
             ip = c.getMenuCard().getSection(this.getSection()).getProduct(i);
-            k.setTitle(ip.getName());
+            k.setTitle(ip.getName(), c);
             k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$");
             k.setImage("src/" + ip.getImageFileName());
 

@@ -1,5 +1,5 @@
 Nuevo pedido:New order
-Cambiar idioma:Change languaje
+Cambiar idioma:Change language
 Seleccionar:Select
 Cancelar:Cancel
 Añadir menú al pedido:Add menu to the order
@@ -18,3 +18,11 @@ Siguiente:Next
 Anterior:Previous
 Cancelar pedido:Cancel the order
 Cancelar pago:Cancel the payment
+Seleccionar Idioma:Select a language
+¿Estás seguro?:Are you sure?
+¿Qué quieres hacer?:What do you want to do?
+Banco no disponible:Bank out of service
+Proceso de pago exitoso:Payment Process Succesful
+Problemas en el proceso de pago:Problem in the payment process
+Resumen del Pedido:Order Summary
+Eliminar Producto:Delete Product

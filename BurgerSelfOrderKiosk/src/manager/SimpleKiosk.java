@@ -25,8 +25,11 @@ public class SimpleKiosk {
         this.kiosk.setOption(optionNumber, tmessage);
     }
 
-    public void setTitle(String message) {
-        this.kiosk.setTitle(message);
+    public void setTitle(String message, Context c) 
+    {
+        TranslatorManager tm = c.getTranslator();
+        String tmessage = tm.translate(message);
+        this.kiosk.setTitle(tmessage);
     }
 
     public void setDescription(String message) {
