@@ -1,0 +1,12 @@
+Número de pedido: 6
+
+Artículos comprados
+=====================
+
+VEGETAL: 1000
+Menú: VEGETAL, COCA COLA NORMAL, ALITAS: 1450
+
+=====================
+
+Total: 2450€
+

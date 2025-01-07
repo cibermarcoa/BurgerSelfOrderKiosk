@@ -1,0 +1,29 @@
+Nuevo pedido: Nuevo pedido  
+Cambiar idioma: Cambiar idioma  
+Seleccionar: Seleccionar  
+Cancelar: Cancelar  
+Añadir menú al pedido: Añadir menú al pedido  
+Añadir producto individual a pedido: Añadir producto individual a pedido  
+Terminar pedido: Terminar pedido  
+Cancelar Pedido: Cancelar Pedido  
+Eliminar producto: Eliminar producto  
+Añadir al pedido: Añadir al pedido  
+Cancelar añadir: Cancelar añadir  
+Hamburguesa: Hamburguesa  
+Bebida: Bebida  
+Complemento: Complemento  
+Sí, eliminar: Sí, eliminar  
+No, cancelar: No, cancelar  
+Siguiente: Siguiente  
+Anterior: Anterior  
+Cancelar pedido: Cancelar pedido  
+Cancelar pago: Cancelar pago  
+Seleccionar Idioma: Seleccionar Idioma  
+¿Estás seguro?: ¿Estás seguro?  
+¿Qué quieres hacer?: ¿Qué quieres hacer?  
+Banco no disponible: Banco no disponible  
+Proceso de pago exitoso: Proceso de pago exitoso  
+Problemas en el proceso de pago: Problemas en el proceso de pago  
+Resumen del Pedido: Resumen del Pedido  
+Eliminar Producto: Eliminar Producto  
+

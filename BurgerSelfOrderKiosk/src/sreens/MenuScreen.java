@@ -57,12 +57,11 @@ public class MenuScreen extends CarouselScreen
                 k.setDescription("Se perderá el menú actual.");
                 k.setOption(4, "Sí, cancelar", c);
                 k.setOption(5, "No, seguir seleccionando", c);
-
-                char confirmRes = k.waitEvent(60);
-                if (confirmRes == 'E') {
-                    return new OrderScreen(); // Confirmación de cancelación
-                }
-            }else if (res == 'G')
+                res = k.waitEvent(60);
+            }
+            if (res == 'E')
+                return new OrderScreen(); // Confirmación de cancelación
+            else if (res == 'G')
                 i--;
             else if (res == 'H')
                 i++;

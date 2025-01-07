@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TranslatorManager {
-    private Translator currentDic = null;
+    private Translator currentDic = new Translator("Español");
     private Map<String, Translator> dictionaries = new HashMap<>();
 
     public TranslatorManager() {

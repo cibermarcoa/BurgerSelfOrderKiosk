@@ -1,0 +1,29 @@
+Nuevo pedido: Neue Bestellung  
+Cambiar idioma: Sprache ändern  
+Seleccionar: Auswählen  
+Cancelar: Abbrechen  
+Añadir menú al pedido: Menü zur Bestellung hinzufügen  
+Añadir producto individual a pedido: Einzelnes Produkt zur Bestellung hinzufügen  
+Terminar pedido: Bestellung abschließen  
+Cancelar Pedido: Bestellung stornieren  
+Eliminar producto: Produkt löschen  
+Añadir al pedido: Zur Bestellung hinzufügen  
+Cancelar añadir: Hinzufügen abbrechen  
+Hamburguesa: Hamburger  
+Bebida: Getränk  
+Complemento: Beilage  
+Sí, eliminar: Ja, löschen  
+No, cancelar: Nein, abbrechen  
+Siguiente: Weiter  
+Anterior: Zurück  
+Cancelar pedido: Bestellung stornieren  
+Cancelar pago: Zahlung abbrechen  
+Seleccionar Idioma: Sprache auswählen  
+¿Estás seguro?: Sind Sie sicher?  
+¿Qué quieres hacer?: Was möchten Sie tun?  
+Banco no disponible: Bank nicht verfügbar  
+Proceso de pago exitoso: Zahlung erfolgreich  
+Problemas en el proceso de pago: Problem beim Zahlungsprozess  
+Resumen del Pedido: Bestellübersicht  
+Eliminar Producto: Produkt löschen  
+

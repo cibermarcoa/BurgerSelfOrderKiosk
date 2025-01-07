@@ -20,16 +20,13 @@ public class SimpleKiosk {
     public void setOption(int optionNumber, String message, Context c) 
     {
         TranslatorManager tm = c.getTranslator();
-        String tmessage = tm.translate(message);
-        
-        this.kiosk.setOption(optionNumber, tmessage);
+        this.kiosk.setOption(optionNumber, tm.translate(message));
     }
 
     public void setTitle(String message, Context c) 
     {
         TranslatorManager tm = c.getTranslator();
-        String tmessage = tm.translate(message);
-        this.kiosk.setTitle(tmessage);
+        this.kiosk.setTitle(tm.translate(message));
     }
 
     public void setDescription(String message) {
