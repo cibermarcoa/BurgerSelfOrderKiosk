@@ -15,7 +15,7 @@ public class TranslatorManager {
     private Map<String, Translator> dictionaries = new HashMap<>();
 
     public TranslatorManager() {
-        String rutaDirectorioDic = "/home/juancar/Documentos/GitHub/BurgerSelfOrderKiosk/BurgerSelfOrderKiosk/src/DICCIONARIOS";
+        String rutaDirectorioDic = "src/DICCIONARIOS";
         File directorio = new File(rutaDirectorioDic);
         
         
