@@ -27,3 +27,9 @@ Problemas en el proceso de pago: Problem beim Zahlungsprozess
 Resumen del Pedido: Bestellübersicht  
 Eliminar Producto: Produkt löschen  
 Volver: Zurück
+Introduce tu tarjeta de crédito: Geben Sie Ihre Kreditkarte ein
+Total: Gesamtbetrag
+Ya puedes recoger tu tarjeta: Sie können Ihre Karte jetzt abholen
+Tu número de pedido es el: Ihre Bestellnummer ist
+Recoge el ticket: Holen Sie sich den Beleg ab
+Permanece atento a las pantallas: Achten Sie auf die Bildschirme

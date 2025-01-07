@@ -31,7 +31,7 @@ public class IdiomScreen extends CarouselScreen {
             // Configurar pantalla con el idioma actual
             super.configureScreenButtons(kiosk);
             kiosk.setTitle("Seleccionar Idioma", translatorManager);
-            kiosk.setDescription(idioms.get(i));
+            kiosk.setDescription(idioms.get(i), translatorManager);
             kiosk.setOption(4, "Seleccionar", translatorManager);
             kiosk.setOption(5, "Cancelar", translatorManager);
             // Ajustar botones de carrusel

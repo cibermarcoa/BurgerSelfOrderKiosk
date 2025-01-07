@@ -27,3 +27,5 @@ Problemas en el proceso de pago: Problemas en el proceso de pago
 Resumen del Pedido: Resumen del Pedido  
 Eliminar Producto: Eliminar Producto  
 Volver: Volver
+Introduce tu tarjeta de crédito: Introduce tu tarjeta de crédito
+Total: Total

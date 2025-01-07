@@ -27,8 +27,8 @@ public class SimpleKiosk {
         this.kiosk.setTitle(tm.translate(message));
     }
 
-    public void setDescription(String message) {
-        this.kiosk.setDescription(message);
+    public void setDescription(String message, TranslatorManager tm) {
+        this.kiosk.setDescription(tm.translate(message));
     }
     public void setMode(int mode) {
         if (mode == 1)

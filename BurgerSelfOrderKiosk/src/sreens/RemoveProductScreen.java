@@ -24,7 +24,7 @@ public class RemoveProductScreen extends CarouselScreen {
         if(currentOrder == null || currentOrder.getProducts().isEmpty()){
             this.configureScreenButtons(k);
             k.setTitle("Eliminar Producto", c.getTranslator());
-            k.setDescription("La orden está vacía. No hay productos que eliminar.");
+            k.setDescription("La orden está vacía. No hay productos que eliminar.", c.getTranslator());
             k.setOption(4, "Volver", c.getTranslator());
             k.waitEvent(60);
             return new OrderScreen();
@@ -38,7 +38,7 @@ public class RemoveProductScreen extends CarouselScreen {
 
             k.clearScreen();
             k.setTitle("Eliminar Producto", c.getTranslator());
-            k.setDescription("¿Eliminar: " + productToDelete.getName() + "?");
+            k.setDescription("¿Eliminar: " + productToDelete.getName() + "?", c.getTranslator());
             k.setOption(4, "Sí, eliminar", c.getTranslator());
             k.setOption(5, "No, cancelar", c.getTranslator());
             this.adjustCarruselButtons(currentIndex, products.size() - 1, k, c.getTranslator());
@@ -49,14 +49,7 @@ public class RemoveProductScreen extends CarouselScreen {
             if (res == 'E') {  
                 products.remove(currentIndex);
                 System.out.println("Producto eliminado: " + productToDelete.getName());
-/*
-                if (products.isEmpty()) {
-                    k.setDescription("La orden está vacía.");
-                    k.waitEvent(60);
-                    
-                }*/
-                return new OrderScreen();
-                // currentIndex = Math.min(currentIndex, products.size() - 1);  
+                return new OrderScreen(); 
             } else if (res == 'F') {  
                 return new OrderScreen();  
             } else if (res == 'G' && currentIndex > 0) { 

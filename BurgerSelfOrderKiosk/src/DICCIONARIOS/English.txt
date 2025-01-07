@@ -27,3 +27,9 @@ Problemas en el proceso de pago:Problem in the payment process
 Resumen del Pedido:Order Summary
 Eliminar Producto:Delete Product
 Volver:Come back
+Introduce tu tarjeta de crédito:Enter your credit card
+Total:Total
+Ya puedes recoger tu tarjeta:You can now collect your card
+Tu número de pedido es el:Your order number is
+Recoge el ticket:Collect the receipt
+Permanece atento a las pantallas:Stay tuned to the screens

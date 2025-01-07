@@ -41,7 +41,7 @@ public class MenuScreen extends CarouselScreen
             
             ip = c.getMenuCard().getSection(section).getProduct(i);
             k.setTitle(ip.getName(), c.getTranslator());
-            k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$");
+            k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$", c.getTranslator());
             k.setImage("src/" + ip.getImageFileName());
             k.setOption(4, "Añadir al pedido", c.getTranslator());
             k.setOption(5, "Cancelar añadir", c.getTranslator());
@@ -54,13 +54,12 @@ public class MenuScreen extends CarouselScreen
             if (res == 'F') {
                 k.clearScreen();
                 k.setTitle("¿Estás seguro?", c.getTranslator());
-                k.setDescription("Se perderá el menú actual.");
+                k.setDescription("Se perderá el menú actual.", c.getTranslator());
                 k.setOption(4, "Sí, cancelar", c.getTranslator());
                 k.setOption(5, "No, seguir seleccionando", c.getTranslator());
-                res = k.waitEvent(60);
+                if (k.waitEvent(60) == 'E')
+                    return new OrderScreen(); // Confirmación de cancelación
             }
-            if (res == 'E')
-                return new OrderScreen(); // Confirmación de cancelación
             else if (res == 'G')
                 i--;
             else if (res == 'H')

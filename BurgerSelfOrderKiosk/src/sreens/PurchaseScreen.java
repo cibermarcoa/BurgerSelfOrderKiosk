@@ -40,7 +40,7 @@ public class PurchaseScreen implements KioskScreen {
             k.setMode(2);
             k.clearScreen();
             k.setTitle("Banco no disponible", c.getTranslator());
-            k.setDescription("El banco no está disponible en este momento. Inténtelo más tarde.");
+            k.setDescription("El banco no está disponible en este momento. Inténtelo más tarde.",c.getTranslator());
             k.waitEvent(5);
             return new OrderScreen(); // Volver a la pantalla de pedido
         }
@@ -58,8 +58,8 @@ public class PurchaseScreen implements KioskScreen {
                     k.setMode(2);
                     k.clearScreen();
                     k.setTitle("Proceso de pago exitoso", c.getTranslator());
-                    k.setDescription("Ya puedes recoger tu tarjeta\nTu número de pedido es el " + orderNumber + "\nRecoge el ticket\nPermanece atento a las pantallas");
-                    k.expelCreditCard(30); // SE LIBERA LA TARJETA
+                    k.setDescription("Ya puedes recoger tu tarjeta\nTu número de pedido es el " + orderNumber + "\nRecoge el ticket\nPermanece atento a las pantallas", c.getTranslator());
+                    k.expelCreditCard(60); // SE LIBERA LA TARJETA
 
                     // Generar e imprimir ticket
                     ArrayList<String> ticketText = writeOrderToFile(orderNumber, o);
@@ -69,14 +69,14 @@ public class PurchaseScreen implements KioskScreen {
                     k.setMode(2);
                     k.clearScreen();
                     k.setTitle("Problemas en el proceso de pago", c.getTranslator());
-                    k.setDescription("El banco dice que no tienes dinero. Prueba con otra tarjeta.");
-                    k.expelCreditCard(30);
+                    k.setDescription("El banco dice que no tienes dinero. Prueba con otra tarjeta.", c.getTranslator());
+                    k.expelCreditCard(60);
                 }
             } catch (CommunicationException ex) {
                 Logger.getLogger(PurchaseScreen.class.getName()).log(Level.SEVERE, null, ex);
                 k.clearScreen();
                 k.setTitle("Error de Comunicación", c.getTranslator());
-                k.setDescription("No se pudo completar el pago debido a un problema de comunicación con el banco.");
+                k.setDescription("No se pudo completar el pago debido a un problema de comunicación con el banco.", c.getTranslator());
                 k.waitEvent(60);
                 return new OrderScreen(); // Volver a la pantalla de pedido
             }
@@ -164,7 +164,7 @@ public class PurchaseScreen implements KioskScreen {
         k.setMode(2);
         k.clearScreen();
         k.setTitle("Resumen del Pedido", c.getTranslator());
-        k.setDescription("Introduce tu tarjeta de crédito\n" + o.getOrderText() + "\nTotal: " + o.getTotalAmount() + "€");
+        k.setDescription(o.getOrderText() + "\nTotal: " + o.getTotalAmount() + "€\n\nIntroduce tu tarjeta de crédito", c.getTranslator());
         k.setOption(0, "Cancelar pedido", c.getTranslator());
         k.setOption(1, "Cancelar pago", c.getTranslator());
         

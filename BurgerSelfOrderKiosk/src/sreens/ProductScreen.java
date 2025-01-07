@@ -22,7 +22,6 @@ public class ProductScreen extends CarouselScreen {
         this.section = section;
     }
 
-
     @Override
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
@@ -35,7 +34,7 @@ public class ProductScreen extends CarouselScreen {
             k.setOption(5, "Cancelar añadir", c.getTranslator());
             ip = c.getMenuCard().getSection(this.getSection()).getProduct(i);
             k.setTitle(ip.getName(), c.getTranslator());
-            k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$");
+            k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$", c.getTranslator());
             k.setImage("src/" + ip.getImageFileName());
 
             this.adjustCarruselButtons(i, c.getMenuCard().getSection(this.getSection()).getNumberOfProducts() - 1, k, c.getTranslator());
@@ -60,19 +59,7 @@ public class ProductScreen extends CarouselScreen {
             }
         }
     }
-    /*
-    private void configureScreenButtons() {
-        
-        k.setMode(1);
-        k.clearScreen();
 
-    }
-
-    public void ProductSelectionScreen(int section) {
-        
-    }
-
-    */
     private int getSection() {
         return this.section;
     }
