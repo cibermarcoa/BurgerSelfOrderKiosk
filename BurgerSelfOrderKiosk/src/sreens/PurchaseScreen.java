@@ -39,7 +39,7 @@ public class PurchaseScreen implements KioskScreen {
         if (!bank.comunicationAvaiable()) {
             k.setMode(2);
             k.clearScreen();
-            k.setTitle("Banco no disponible", c);
+            k.setTitle("Banco no disponible", c.getTranslator());
             k.setDescription("El banco no está disponible en este momento. Inténtelo más tarde.");
             k.waitEvent(5);
             return new OrderScreen(); // Volver a la pantalla de pedido
@@ -57,7 +57,7 @@ public class PurchaseScreen implements KioskScreen {
 
                     k.setMode(2);
                     k.clearScreen();
-                    k.setTitle("Proceso de pago exitoso",c);
+                    k.setTitle("Proceso de pago exitoso", c.getTranslator());
                     k.setDescription("Ya puedes recoger tu tarjeta\nTu número de pedido es el " + orderNumber + "\nRecoge el ticket\nPermanece atento a las pantallas");
                     k.expelCreditCard(30); // SE LIBERA LA TARJETA
 
@@ -68,14 +68,14 @@ public class PurchaseScreen implements KioskScreen {
                     // Proceso de pago fallido
                     k.setMode(2);
                     k.clearScreen();
-                    k.setTitle("Problemas en el proceso de pago", c);
+                    k.setTitle("Problemas en el proceso de pago", c.getTranslator());
                     k.setDescription("El banco dice que no tienes dinero. Prueba con otra tarjeta.");
                     k.expelCreditCard(30);
                 }
             } catch (CommunicationException ex) {
                 Logger.getLogger(PurchaseScreen.class.getName()).log(Level.SEVERE, null, ex);
                 k.clearScreen();
-                k.setTitle("Error de Comunicación", c);
+                k.setTitle("Error de Comunicación", c.getTranslator());
                 k.setDescription("No se pudo completar el pago debido a un problema de comunicación con el banco.");
                 k.waitEvent(60);
                 return new OrderScreen(); // Volver a la pantalla de pedido
@@ -163,10 +163,10 @@ public class PurchaseScreen implements KioskScreen {
     private void configureScreenButtons(SimpleKiosk k, Order o, Context c) {
         k.setMode(2);
         k.clearScreen();
-        k.setTitle("Resumen del Pedido", c);
+        k.setTitle("Resumen del Pedido", c.getTranslator());
         k.setDescription("Introduce tu tarjeta de crédito\n" + o.getOrderText() + "\nTotal: " + o.getTotalAmount() + "€");
-        k.setOption(0, "Cancelar pedido", c);
-        k.setOption(1, "Cancelar pago", c);
+        k.setOption(0, "Cancelar pedido", c.getTranslator());
+        k.setOption(1, "Cancelar pago", c.getTranslator());
         
     }
 }

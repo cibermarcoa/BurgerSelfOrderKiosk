@@ -26,4 +26,4 @@ Proceso de pago exitoso: Zahlung erfolgreich
 Problemas en el proceso de pago: Problem beim Zahlungsprozess  
 Resumen del Pedido: Bestellübersicht  
 Eliminar Producto: Produkt löschen  
-
+Volver: Zurück

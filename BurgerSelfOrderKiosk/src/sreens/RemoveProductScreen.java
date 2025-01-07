@@ -14,7 +14,7 @@ import products.Product;
  *
  * @author hugo
  */
-public class RemoveProductScreen implements KioskScreen{
+public class RemoveProductScreen extends CarouselScreen {
 
     @Override
     public KioskScreen show(Context c) {
@@ -22,9 +22,10 @@ public class RemoveProductScreen implements KioskScreen{
         Order currentOrder = c.getOrder();
         
         if(currentOrder == null || currentOrder.getProducts().isEmpty()){
-            k.clearScreen();
-            k.setTitle("Eliminar Producto", c);
+            this.configureScreenButtons(k);
+            k.setTitle("Eliminar Producto", c.getTranslator());
             k.setDescription("La orden está vacía. No hay productos que eliminar.");
+            k.setOption(4, "Volver", c.getTranslator());
             k.waitEvent(60);
             return new OrderScreen();
         }
@@ -36,12 +37,11 @@ public class RemoveProductScreen implements KioskScreen{
             Product productToDelete = products.get(currentIndex);
 
             k.clearScreen();
-            k.setTitle("Eliminar Producto",c);
+            k.setTitle("Eliminar Producto", c.getTranslator());
             k.setDescription("¿Eliminar: " + productToDelete.getName() + "?");
-            k.setOption(4, "Sí, eliminar", c);
-            k.setOption(5, "No, cancelar", c);
-            if (currentIndex > 0) k.setOption(6, "< Anterior", c);
-            if (currentIndex < products.size() - 1) k.setOption(7, "Siguiente >", c);
+            k.setOption(4, "Sí, eliminar", c.getTranslator());
+            k.setOption(5, "No, cancelar", c.getTranslator());
+            this.adjustCarruselButtons(currentIndex, products.size() - 1, k, c.getTranslator());
 
             char res = k.waitEvent(60);
             System.out.println(res);
@@ -49,14 +49,14 @@ public class RemoveProductScreen implements KioskScreen{
             if (res == 'E') {  
                 products.remove(currentIndex);
                 System.out.println("Producto eliminado: " + productToDelete.getName());
-
+/*
                 if (products.isEmpty()) {
                     k.setDescription("La orden está vacía.");
                     k.waitEvent(60);
-                    return new OrderScreen();  
-                }
-
-                currentIndex = Math.min(currentIndex, products.size() - 1);  
+                    
+                }*/
+                return new OrderScreen();
+                // currentIndex = Math.min(currentIndex, products.size() - 1);  
             } else if (res == 'F') {  
                 return new OrderScreen();  
             } else if (res == 'G' && currentIndex > 0) { 

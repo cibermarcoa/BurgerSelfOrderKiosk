@@ -17,15 +17,13 @@ public class SimpleKiosk {
         this.kiosk = new BurgerSelfOrderKiosk();
     }
     
-    public void setOption(int optionNumber, String message, Context c) 
+    public void setOption(int optionNumber, String message, TranslatorManager tm) 
     {
-        TranslatorManager tm = c.getTranslator();
         this.kiosk.setOption(optionNumber, tm.translate(message));
     }
 
-    public void setTitle(String message, Context c) 
+    public void setTitle(String message, TranslatorManager tm) 
     {
-        TranslatorManager tm = c.getTranslator();
         this.kiosk.setTitle(tm.translate(message));
     }
 

@@ -44,7 +44,7 @@ public class WellcomeScreen implements KioskScreen {
     private void configureScreenButtons(SimpleKiosk kiosk, Context c) {
         kiosk.setMode(1);
         kiosk.clearScreen();
-        kiosk.setOption(0, "Nuevo pedido",c);
-        kiosk.setOption(4, "Cambiar idioma", c);
+        kiosk.setOption(0, "Nuevo pedido", c.getTranslator());
+        kiosk.setOption(4, "Cambiar idioma", c.getTranslator());
     }
 }

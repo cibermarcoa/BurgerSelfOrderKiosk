@@ -45,8 +45,8 @@ public class SectionScreen extends CarouselScreen {
     
 
     protected void configureScreenButtons(SimpleKiosk kiosk, Context c) {
-        kiosk.setOption(0, "Hamburguesa", c);
-        kiosk.setOption(1, "Bebida", c);
-        kiosk.setOption(2, "Complemento", c);
+        kiosk.setOption(0, "Hamburguesa", c.getTranslator());
+        kiosk.setOption(1, "Bebida", c.getTranslator());
+        kiosk.setOption(2, "Complemento", c.getTranslator());
     }
 }

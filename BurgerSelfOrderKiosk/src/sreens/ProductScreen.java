@@ -31,14 +31,14 @@ public class ProductScreen extends CarouselScreen {
         
         while (true) {
             this.configureScreenButtons(k);
-            k.setOption(4, "Añadir al pedido", c);
-            k.setOption(5, "Cancelar añadir", c);
+            k.setOption(4, "Añadir al pedido", c.getTranslator());
+            k.setOption(5, "Cancelar añadir", c.getTranslator());
             ip = c.getMenuCard().getSection(this.getSection()).getProduct(i);
-            k.setTitle(ip.getName(), c);
+            k.setTitle(ip.getName(), c.getTranslator());
             k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$");
             k.setImage("src/" + ip.getImageFileName());
 
-            this.adjustCarruselButtons(i, c.getMenuCard().getSection(this.getSection()).getNumberOfProducts() - 1, k, c);
+            this.adjustCarruselButtons(i, c.getMenuCard().getSection(this.getSection()).getNumberOfProducts() - 1, k, c.getTranslator());
 
             char res = k.waitEvent(60);
             System.out.println(res);

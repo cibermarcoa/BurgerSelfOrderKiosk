@@ -26,4 +26,4 @@ Proceso de pago exitoso: Proceso de pago exitoso
 Problemas en el proceso de pago: Problemas en el proceso de pago  
 Resumen del Pedido: Resumen del Pedido  
 Eliminar Producto: Eliminar Producto  
-
+Volver: Volver

@@ -26,3 +26,4 @@ Proceso de pago exitoso:Payment Process Succesful
 Problemas en el proceso de pago:Problem in the payment process
 Resumen del Pedido:Order Summary
 Eliminar Producto:Delete Product
+Volver:Come back

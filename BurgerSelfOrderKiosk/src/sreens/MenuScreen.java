@@ -40,23 +40,23 @@ public class MenuScreen extends CarouselScreen
             this.configureScreenButtons(k);
             
             ip = c.getMenuCard().getSection(section).getProduct(i);
-            k.setTitle(ip.getName(), c);
+            k.setTitle(ip.getName(), c.getTranslator());
             k.setDescription(ip.getDescription() + "\n" + ip.getPrice() + "$");
             k.setImage("src/" + ip.getImageFileName());
-            k.setOption(4, "Añadir al pedido", c);
-            k.setOption(5, "Cancelar añadir", c);
+            k.setOption(4, "Añadir al pedido", c.getTranslator());
+            k.setOption(5, "Cancelar añadir", c.getTranslator());
             
-            this.adjustCarruselButtons(i, c.getMenuCard().getSection(section).getNumberOfProducts() - 1, k, c);
+            this.adjustCarruselButtons(i, c.getMenuCard().getSection(section).getNumberOfProducts() - 1, k, c.getTranslator());
             
             char res = k.waitEvent(60);
             System.out.println(res);
 
             if (res == 'F') {
                 k.clearScreen();
-                k.setTitle("¿Estás seguro?", c);
+                k.setTitle("¿Estás seguro?", c.getTranslator());
                 k.setDescription("Se perderá el menú actual.");
-                k.setOption(4, "Sí, cancelar", c);
-                k.setOption(5, "No, seguir seleccionando", c);
+                k.setOption(4, "Sí, cancelar", c.getTranslator());
+                k.setOption(5, "No, seguir seleccionando", c.getTranslator());
                 res = k.waitEvent(60);
             }
             if (res == 'E')

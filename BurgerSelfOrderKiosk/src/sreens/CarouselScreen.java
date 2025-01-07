@@ -6,6 +6,7 @@ package sreens;
 
 import manager.Context;
 import manager.SimpleKiosk;
+import manager.TranslatorManager;
 
 /**
  *
@@ -13,11 +14,11 @@ import manager.SimpleKiosk;
  */
 public abstract class CarouselScreen implements KioskScreen {
     
-    protected void adjustCarruselButtons(int currentElement, int numberOfElements, SimpleKiosk k, Context c) {
+    protected void adjustCarruselButtons(int currentElement, int numberOfElements, SimpleKiosk k, TranslatorManager tm) {
         if (currentElement > 0)
-            k.setOption(6, "&lt;", c);
+            k.setOption(6, "&lt;", tm);
         if (currentElement < numberOfElements)
-            k.setOption(7, "&gt;", c);
+            k.setOption(7, "&gt;", tm);
     }
 
     protected void configureScreenButtons(SimpleKiosk k) {
