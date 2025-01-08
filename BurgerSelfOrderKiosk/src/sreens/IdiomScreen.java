@@ -40,6 +40,7 @@ public class IdiomScreen extends CarouselScreen {
 
             // Esperar evento
             char res = kiosk.waitEvent(60);
+            System.out.println(res);
 
             if (res == 'E') { // Seleccionar idioma
                 translatorManager.setCurrentIdiom(idioms.get(i));
