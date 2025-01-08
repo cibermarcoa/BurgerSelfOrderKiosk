@@ -35,7 +35,8 @@ public class PurchaseScreen implements KioskScreen {
         Order o = c.getOrder();
         
         this.configureScreenButtons(k, o, c);
-
+        
+        // Comprobar si hay comunicación con el banco.
         if (!bank.comunicationAvaiable()) {
             k.setMode(2);
             k.clearScreen();
@@ -49,17 +50,18 @@ public class PurchaseScreen implements KioskScreen {
         System.out.println(res);
         
         if (res == '1') {   // Tarjeta introducida
-            k.retainCard(false);
+            k.retainCard(false);    // Retener temporalmente la tarjeta.
             try {
+                // Realizar la operación bancaria.
                 if (bank.doOperation(k.getCardNumber(), o.getTotalAmount())) {  // Proceso de pago exitoso
-                    int orderNumber = this.incrementOrderNumber();
-                    this.writeOrderToFile(orderNumber, o);
+                    int orderNumber = this.incrementOrderNumber();  // Incrementar el número de pedido.
+                    this.writeOrderToFile(orderNumber, o);  // Escribir el pedido en un archivo de ticket.
 
                     k.setMode(2);
                     k.clearScreen();
                     k.setTitle("Proceso de pago exitoso", c.getTranslator());
                     k.setDescription("Ya puedes recoger tu tarjeta\nTu número de pedido es el " + orderNumber + "\nRecoge el ticket\nPermanece atento a las pantallas", c.getTranslator());
-                    k.expelCreditCard(60); // SE LIBERA LA TARJETA
+                    k.expelCreditCard(60); // Expulsar la tarjeta tras el pago.
 
                     // Generar e imprimir ticket
                     ArrayList<String> ticketText = writeOrderToFile(orderNumber, o);
@@ -72,7 +74,7 @@ public class PurchaseScreen implements KioskScreen {
                     k.setDescription("El banco dice que no tienes dinero. Prueba con otra tarjeta.", c.getTranslator());
                     k.expelCreditCard(60);
                 }
-            } catch (CommunicationException ex) {
+            } catch (CommunicationException ex) {   // Manejar excepciones de comunicación.
                 Logger.getLogger(PurchaseScreen.class.getName()).log(Level.SEVERE, null, ex);
                 k.clearScreen();
                 k.setTitle("Error de Comunicación", c.getTranslator());
@@ -100,7 +102,8 @@ public class PurchaseScreen implements KioskScreen {
     private int incrementOrderNumber() {
         int orderNumber = 0;
         File file = new File("order_number.txt");
-
+        
+        // Leer el número actual si existe.
         try {
             // Crear archivo si no existe
             if (!file.exists()) {
@@ -159,6 +162,13 @@ public class PurchaseScreen implements KioskScreen {
 
         return ticketContent;
     }
+    
+    /**
+     * Configura los botones de la pantalla de compra.
+     * @param k Interfaz del quiosco.
+     * @param o Orden actual.
+     * @param c Contexto con la información de traducción.
+     */
     
     private void configureScreenButtons(SimpleKiosk k, Order o, Context c) {
         k.setMode(2);

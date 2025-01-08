@@ -23,15 +23,20 @@ public class SectionScreen extends CarouselScreen {
     @Override
     public KioskScreen show(Context c) {
         SimpleKiosk k = c.getKiosk();
+        
+        // Configurar la pantalla con botones básicos y las opciones específicas de la pantalla de secciones.
         super.configureScreenButtons(k);
         this.configureScreenButtons(k, c);
+        
         char res = k.waitEvent(60);
         System.out.println(res);
+        
+        // Devolver la pantalla correspondiente según la opción seleccionada.
         return switch (res) {
-            case 'A' -> new ProductScreen(0);
-            case 'B' -> new ProductScreen(1);
-            case 'C' -> new ProductScreen(2);
-            default -> null;
+            case 'A' -> new ProductScreen(0);   // Muestra los productos de la sección "Hamburguesas".
+            case 'B' -> new ProductScreen(1);    // Muestra los productos de la sección "Bebidas".
+            case 'C' -> new ProductScreen(2);    // Muestra los productos de la sección "Complementos".
+            default -> null;    // Si no se selecciona una opción válida, no se muestra nada.
         };
         
     }
@@ -45,8 +50,8 @@ public class SectionScreen extends CarouselScreen {
     
 
     protected void configureScreenButtons(SimpleKiosk kiosk, Context c) {
-        kiosk.setOption(0, "Hamburguesa", c.getTranslator());
-        kiosk.setOption(1, "Bebida", c.getTranslator());
-        kiosk.setOption(2, "Complemento", c.getTranslator());
-    }
+        kiosk.setOption(0, "Hamburguesa", c.getTranslator());    // Opción para seleccionar hamburguesas.
+        kiosk.setOption(1, "Bebida", c.getTranslator());    // Opción para seleccionar bebidas.
+        kiosk.setOption(2, "Complemento", c.getTranslator());    // Opción para seleccionar complementos.
+    }   
 }

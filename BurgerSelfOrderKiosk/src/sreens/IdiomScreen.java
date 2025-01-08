@@ -17,6 +17,7 @@ import manager.TranslatorManager;
     
 public class IdiomScreen extends CarouselScreen {
 
+    //Muestra la pantalla de selección de idioma y gestiona la navegación y selección.
     @Override
     public KioskScreen show(Context c) {
         SimpleKiosk kiosk = c.getKiosk();

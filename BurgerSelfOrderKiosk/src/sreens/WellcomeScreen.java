@@ -28,10 +28,11 @@ public class WellcomeScreen implements KioskScreen {
         char res = kiosk.waitEvent(60);
         System.out.println(res);
         
+        // Navega a la pantalla correspondiente según la opción seleccionada.
         if (res == 'A')
-            return new OrderScreen();
+            return new OrderScreen();   // Opción para iniciar un nuevo pedido.
         else if (res == 'E')
-            return new IdiomScreen();
+            return new IdiomScreen();    // Opción para cambiar el idioma.
         return null;
     }
 
@@ -44,7 +45,7 @@ public class WellcomeScreen implements KioskScreen {
     private void configureScreenButtons(SimpleKiosk kiosk, Context c) {
         kiosk.setMode(1);
         kiosk.clearScreen();
-        kiosk.setOption(0, "Nuevo pedido", c.getTranslator());
-        kiosk.setOption(4, "Cambiar idioma", c.getTranslator());
+        kiosk.setOption(0, "Nuevo pedido", c.getTranslator());  // Botón para iniciar un nuevo pedido.
+        kiosk.setOption(4, "Cambiar idioma", c.getTranslator());    // Botón para cambiar el idioma.
     }
 }

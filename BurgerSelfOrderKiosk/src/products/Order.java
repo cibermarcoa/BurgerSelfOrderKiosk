@@ -21,7 +21,7 @@ public class Order {
         this.products = new ArrayList<>();
     }
 
-    // Métodos
+    //Calcula el monto total de la orden sumando el precio de cada producto.
     public int getTotalAmount() {
         int total = 0;
         for (Product product : products) {
@@ -29,7 +29,8 @@ public class Order {
         }
         return total;
     }
-
+    
+    //Genera un texto resumen con los detalles de los productos de la orden.
     public String getOrderText() {
         StringBuilder text = new StringBuilder();
         for (Product product : products) {
@@ -37,15 +38,18 @@ public class Order {
         }
         return text.toString();
     }
-
+    
+    //Devuelve el número de pedido.
     public int getOrderNumber() {
         return orderNumber;
     }
-
+    
+    //Añade un producto (individual o menú) a la orden.
     public void addProduct(Product product) {
         products.add(product);
     }
     
+    //Devuelve la lista de productos en la orden.
     public List<Product> getProducts() {
         return products;
     }

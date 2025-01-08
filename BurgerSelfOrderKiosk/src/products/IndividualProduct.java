@@ -23,20 +23,20 @@ public class IndividualProduct implements Product{
     }
 
     @Override
-    public int getPrice() {
+    public int getPrice() { //Obtiene el precio del producto
         return this.price;
     }
 
     @Override
-    public String getName() {
+    public String getName() {   //Obtiene el nombre del producto
         return this.name;
     }
 
-    public String getDescription() {
+    public String getDescription() {    //Obtiene la descripción del producto
         return this.description;
     }
 
-    public String getImageFileName() {
+    public String getImageFileName() {  //Obtiene el nombre del archivo de la imagen del producto.
         return this.imageFileName;
     }
 }
